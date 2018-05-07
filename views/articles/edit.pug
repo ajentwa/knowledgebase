@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1= title
+  form(method='POST', action='/articles/update/' + article._id)
+    .form-group
+      label(for='title') Title
+      input#title.form-control(type='text', name='title', placeholder='Enter Title', value= article.title)
+    .form-group
+      label(for='author') Author
+      input#author.form-control(type='text', name='author', placeholder='Enter Author', value= author, readonly)
+    .form-group
+      label(for='body') Body
+      textarea#body.form-control(name='body', placeholder='Enter Comment')= article.body
+    input.btn.btn-primary(type='submit', value='Submit')

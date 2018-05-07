@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  .row
+    .col-sm-4
+    .col-sm-4
+      .panel.panel-primary
+        .panel-heading
+          h3= title
+        .panel-body
+          form(method='POST', action='/users/register')
+            .form-group
+              label(for='name') Name
+              input#name.form-control(type='text', name='name', placeholder='Enter Name')
+            .form-group
+              label(for='email') Email
+              input#email.form-control(type='text', name='email', placeholder='Enter Email')
+            .form-group
+              label(for='username') Username
+              input#username.form-control(type='text', name='username', placeholder='Enter Username')
+            .form-group
+              label(for='password') Password
+              input#password.form-control(type='password', name='password', placeholder='Enter Password')
+            .form-group
+              label(for='password2') Confirm Password
+              input#password2.form-control(type='password', name='password2', placeholder='Enter Password Again')
+            input.btn.btn-primary(type='submit', value='Register')
+
+    .col-sm-4
+  

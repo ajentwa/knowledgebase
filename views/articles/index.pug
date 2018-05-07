@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1= title
+  .panel.panel-default
+    .panel-heading
+      a.btn.btn-primary(href='/articles/add') Add
+    each article, i in articles
+      ul.list-group
+        li.list-group-item 
+          a.btn.btn-link(href='/articles/article/'+article._id) #{article.title}
